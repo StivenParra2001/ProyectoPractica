@@ -122,17 +122,53 @@ Ahora puedes usar el token para interactuar con los endpoints de tareas.
 * **Método:** `POST`
 * **URL:** `http://localhost:3000/api/tasks`
 * **Authorization:**
-    1.  Ve a la pestaña **`Authorization`**.
-    2.  En el menú desplegable "Type", selecciona **`Bearer Token`**.
+    1.  Ve a la pestaña Authorization.
+    2.  En el menú desplegable "Type", selecciona Bearer Token.
     3.  Pega el token que copiaste en el campo "Token" de la derecha.
         
-* **Body:** (`raw`, `JSON`)
-    ```json
+Body: (raw, JSON)
+    json
     {
         "title": "Mi primera tarea",
         "description": "Esta es una tarea creada con Postman"
     }
-    ```
-* Haz clic en "Send". Deberías recibir una respuesta `201 Created` con la tarea recién creada.
+    
+ Haz clic en "Send". Deberías recibir una respuesta 201 Created con la tarea recién creada.
 
-**¡Importante!** Deberás usar esta misma configuración de **Authorization** para todas las demás peticiones a los endpoints de tareas (`GET`, `PUT`, `DELETE`).
+Importante Deberás usar esta misma configuración de **Authorization** para todas las demás peticiones a los endpoints de tareas (GET, PUT, DELETE).
+
+
+Durante el desarrollo del proyecto, se utilizó un enfoque de commits atómicos y descriptivos, siguiendo la especificación de **Conventional Commits**. Esto permite mantener un historial de versiones limpio, legible y fácil de seguir.
+
+Ejemplos de la secuencia de commits realizados:
+ Configuración inicial del proyecto con Node.js, Express y TypeScript.
+Implementación de la conexión a MongoDB con Mongoose.
+ Creación de modelos User y Task con sus respectivos schemas.
+Desarrollo de la lógica de registro y login de usuarios con JWT y bcrypt.
+ Creación del middleware de autenticación para proteger rutas.
+Implementación del CRUD completo y autorizado para las tareas.
+ Adición de validaciones a las rutas de entrada con express-validator.
+ Implementación de la documentación de la API con Swagger.
+ Corrección de errores de análisis en la especificación de Swagger.
+Simplificación de la sintaxis asíncrona a promesas .then/.catch.
+ Finalización del README y configuración del git
+
+### Uso de Asistentes de IA
+
+Se utilizó un asistente de IA (Gemini) como herramienta de apoyo para acelerar el desarrollo, aprender nuevos conceptos y solucionar problemas complejos de manera eficiente. A continuación, se muestran ejemplos de los tipos de prompts utilizados durante el proceso:
+
+###1. Configuración y Código Inicial
+Dame los pasos y comandos para iniciar un proyecto desde cero con Node.js, Express y TypeScript, configurado para usar CommonJS.
+*Muéstrame cómo crear un Schema de Mongoose para una tarea que incluya título, descripción, estado y una referencia a un usuario.
+
+##2. Lógica Específica
+*Escribe una función de controlador en Express para el login de un usuario. Debe buscar al usuario, comparar la contraseña con bcrypt.compare, y si es exitoso, generar un JWT.
+*¿Cómo puedo crear un middleware en Express que lea un Bearer Token del encabezado Authorization y verifique su validez con jsonwebtoken?
+
+## 3. Debugging (Solución de Errores)
+*"Mi código de TypeScript me da el error `Cannot find namespace express. ¿Qué significa y cómo lo soluciono?
+* Estoy recibiendo un error `404 Not Found - Cannot POST /api/tasks` aunque creo que mi ruta está bien definida. ¿Cuáles son las causas más comunes de este error en Express?"
+* *"Mi página de Swagger carga pero muestra `No operations defined in spec!`. Mi configuración de `swagger-jsdoc` es la siguiente [...]. ¿Qué podría estar causando este problema de análisis?"*
+
+#### 4. Documentación y Refactorización
+* *"enera un bloque de comentarios JSDoc para Swagger que documente un endpoint `PUT` para actualizar una tarea, incluyendo un parámetro de ruta 'id' y el cuerpo de la petición."
